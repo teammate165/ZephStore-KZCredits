@@ -27,7 +27,7 @@
 	}
 	"On Practice Finished Again"
 	{
-		"#format"	"{1:s},{2:s},{3:i}"
+		"#format"	"{1:s},{2:i}"
 		"en" 		"{1} You earned {green}{2}{default} credits for completing this map in practice mode again!"
 	}
 	
