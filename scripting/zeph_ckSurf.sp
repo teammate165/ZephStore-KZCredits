@@ -8,7 +8,7 @@
 #pragma semicolon 1
 #pragma newdecls required
 
-#define PLUGIN_VERSION "1.0"
+#define PLUGIN_VERSION "1.1"
 
 bool mapFinished[MAXPLAYERS + 1] = false;
 bool bonusFinished[MAXPLAYERS + 1] = false;
@@ -16,15 +16,6 @@ bool practiceFinished[MAXPLAYERS + 1] = false;
 
 char g_sTag[32];
 ConVar gc_sTag;
-
-public Plugin myinfo =
-{
-	name = "Zephyrus-Store: ckSurf",
-	author = "Simon, Cruze",
-	description = "Give credits on completion.",
-	version = PLUGIN_VERSION,
-	url = "yash1441@yahoo.com"
-};
 
 Handle g_hCreditsNormal = INVALID_HANDLE;
 Handle g_hCreditsBonus = INVALID_HANDLE;
@@ -35,6 +26,15 @@ Handle g_hCreditsPracticeAfterCompletion = INVALID_HANDLE;
 
 int g_CreditsNormal, g_CreditsBonus, g_CreditsPractice, g_CreditsNormalAfterCompletion, g_CreditsBonusAfterCompletion, g_CreditsPracticeAfterCompletion;
 
+public Plugin myinfo =
+{
+	name = "Zephyrus-Store: ckSurf",
+	author = "Simon, Cruze",
+	description = "Give credits on completion.",
+	version = PLUGIN_VERSION,
+	url = "yash1441@yahoo.com"
+};
+
 public void OnPluginStart()
 {
 	g_hCreditsNormal = CreateConVar("zeph_surf_normal", "50", "Credits given when a player finishes a map.");
@@ -44,11 +44,6 @@ public void OnPluginStart()
 	g_hCreditsBonusAfterCompletion = CreateConVar("zeph_surf_bonus_again", "50", "Credits given when a player finishes a bonus again.");
 	g_hCreditsPracticeAfterCompletion = CreateConVar("zeph_surf_practice_again", "5", "Credits given when a player finishes a map in practice mode again.");
 	
-	AutoExecConfig(true, "zeph_cksurf");
-	LoadTranslations("zeph_cksurf");
-}
-public void OnConfigsExecuted()
-{
 	HookConVarChange(g_hCreditsNormal, OnConVarChanged);
 	HookConVarChange(g_hCreditsBonus, OnConVarChanged);
 	HookConVarChange(g_hCreditsPractice, OnConVarChanged);
@@ -56,19 +51,8 @@ public void OnConfigsExecuted()
 	HookConVarChange(g_hCreditsBonusAfterCompletion, OnConVarChanged);
 	HookConVarChange(g_hCreditsPracticeAfterCompletion, OnConVarChanged);
 	
-	gc_sTag = FindConVar("ck_chat_prefix");
-	gc_sTag.GetString(g_sTag, sizeof(g_sTag));
-	
-}
-
-public void OnMapStart()
-{
-	for(int i = 1; i < MaxClients; i++)
-	{
-		mapFinished[i] = false;
-		bonusFinished[i] = false;
-		practiceFinished[i] = false;
-	}
+	AutoExecConfig(true, "zeph_cksurf");
+	LoadTranslations("zeph_cksurf");
 }
 
 public int OnConVarChanged(Handle convar, const char[] oldValue, const char[] newValue)
@@ -96,6 +80,30 @@ public int OnConVarChanged(Handle convar, const char[] oldValue, const char[] ne
 	else if (convar == g_hCreditsPracticeAfterCompletion)
 	{
 		g_CreditsPracticeAfterCompletion = StringToInt(newValue);
+	}
+}
+
+public void OnConfigsExecuted()
+{
+	g_CreditsNormal = GetConVarInt(g_hCreditsNormal);
+	g_CreditsBonus = GetConVarInt(g_hCreditsBonus);
+	g_CreditsPractice = GetConVarInt(g_hCreditsPractice);
+	g_CreditsNormalAfterCompletion = GetConVarInt(g_hCreditsNormalAfterCompletion);
+	g_CreditsBonusAfterCompletion = GetConVarInt(g_hCreditsBonusAfterCompletion);
+	g_CreditsPracticeAfterCompletion = GetConVarInt(g_hCreditsPracticeAfterCompletion);
+	
+	gc_sTag = FindConVar("ck_chat_prefix");
+	gc_sTag.GetString(g_sTag, sizeof(g_sTag));
+	
+}
+
+public void OnMapStart()
+{
+	for(int i = 1; i < MaxClients; i++)
+	{
+		mapFinished[i] = false;
+		bonusFinished[i] = false;
+		practiceFinished[i] = false;
 	}
 }
 
