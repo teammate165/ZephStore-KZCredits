@@ -1,5 +1,5 @@
 #include <sourcemod>
-#include <colorvariables>
+#include <colorlib>
 #include <sdktools>
 #include <cstrike>
 #include <surftimer>
