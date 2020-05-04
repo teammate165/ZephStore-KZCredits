@@ -111,13 +111,13 @@ public Action surftimer_OnMapFinished(int client, float fRunTime, char sRunTime[
 {
 	if(!mapFinished[client])
 	{
-		CPrintToChat(client, "%t", "On Map Finished", g_sTag, g_CreditsNormal);
+		CPrintToChat(client, "%t", "OnMapFinished", g_sTag, g_CreditsNormal);
 		Store_SetClientCredits(client, Store_GetClientCredits(client) + g_CreditsNormal);
 		mapFinished[client] = true;
 	}
 	else
 	{
-		CPrintToChat(client, "%t", "On Map Finished Again", g_sTag, g_CreditsNormalAfterCompletion);
+		CPrintToChat(client, "%t", "OnMapFinishedAgain", g_sTag, g_CreditsNormalAfterCompletion);
 		Store_SetClientCredits(client, Store_GetClientCredits(client) + g_CreditsNormalAfterCompletion);
 	}
 }
@@ -126,13 +126,13 @@ public Action surftimer_OnBonusFinished(int client, float fRunTime, char sRunTim
 {
 	if(!bonusFinished[client])
 	{
-		CPrintToChat(client, "%t", "On Bonus Finished", g_sTag, g_CreditsBonus);
+		CPrintToChat(client, "%t", "OnBonusFinished", g_sTag, g_CreditsBonus);
 		Store_SetClientCredits(client, Store_GetClientCredits(client) + g_CreditsBonus);
 		bonusFinished[client] = true;
 	}
 	else
 	{
-		CPrintToChat(client, "%t", "On Bonus Finished Again", g_sTag, g_CreditsBonusAfterCompletion);
+		CPrintToChat(client, "%t", "OnBonusFinishedAgain", g_sTag, g_CreditsBonusAfterCompletion);
 		Store_SetClientCredits(client, Store_GetClientCredits(client) + g_CreditsBonusAfterCompletion);
 	}
 }
@@ -141,13 +141,13 @@ public Action surftimer_OnPracticeFinished(int client, float fRunTime, char sRun
 {
 	if(!practiceFinished[client])
 	{
-		CPrintToChat(client, "%t", "On Practice Finished", g_sTag, g_CreditsPractice);
+		CPrintToChat(client, "%t", "OnPracticeFinished", g_sTag, g_CreditsPractice);
 		Store_SetClientCredits(client, Store_GetClientCredits(client) + g_CreditsPractice);
 		practiceFinished[client] = true;
 	}
 	else
 	{
-		CPrintToChat(client, "%t", "On Practice Finished Again", g_sTag, g_CreditsPracticeAfterCompletion);
+		CPrintToChat(client, "%t", "On PracticeFinishedAgain", g_sTag, g_CreditsPracticeAfterCompletion);
 		Store_SetClientCredits(client, Store_GetClientCredits(client) + g_CreditsPracticeAfterCompletion);
 	}
 }
