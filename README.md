@@ -1,4 +1,4 @@
-# Store-surftimer-credits for Zephstore
+# Store-surftimer-credits for Zephstore and Kxnrl
 
 Gives credits to player who complete map or bonus or map in practice mode.
 
