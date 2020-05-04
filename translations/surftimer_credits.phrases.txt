@@ -1,31 +1,31 @@
 "Phrases"
 {
-	"On Map Finished"
+	"OnMapFinished"
 	{
 		"#format"	"{1:s},{2:i}"
 		"en"		"{1} You earned {green}{2}{default} credits for completing this map!"
 	}
-	"On Map Finished Again"
+	"OnMapFinishedAgain"
 	{
 		"#format"	"{1:s},{2:i}"
 		"en"		"{1} You earned {green}{2}{default} credits for completing this map again!"
 	}
-	"On Bonus Finished"
+	"OnBonusFinished"
 	{
 		"#format"	"{1:s},{2:i}"
 		"en"		"{1} You earned {green}{2}{default} credits for completing this bonus!"
 	}
-	"On Bonus Finished Again"
+	"OnBonusFinishedAgain"
 	{
 		"#format"	"{1:s},{2:i}"
 		"en" 		"{1} You earned {green}{2}{default} credits for completing this bonus again!"
 	}
-	"On Practice Finished"
+	"OnPracticeFinished"
 	{
 		"#format"	"{1:s},{2:i}"
 		"en" 		"{1} You earned {green}{2}{default} credits for completing this map in practice mode!"
 	}
-	"On Practice Finished Again"
+	"OnPracticeFinishedAgain"
 	{
 		"#format"	"{1:s},{2:i}"
 		"en" 		"{1} You earned {green}{2}{default} credits for completing this map in practice mode again!"
