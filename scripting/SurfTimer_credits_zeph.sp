@@ -52,7 +52,7 @@ public void OnPluginStart()
 	HookConVarChange(g_hCreditsPracticeAfterCompletion, OnConVarChanged);
 	
 	AutoExecConfig(true, "surftimer_credits");
-	LoadTranslations("surftimer_credits");
+	LoadTranslations("surftimer_credits.phrases");
 }
 
 public int OnConVarChanged(Handle convar, const char[] oldValue, const char[] newValue)
