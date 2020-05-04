@@ -2,7 +2,7 @@
 #include <colorvariables>
 #include <sdktools>
 #include <cstrike>
-#include <ckSurf>
+#include <surftimer>
 #include <store>
 
 #pragma semicolon 1
@@ -28,8 +28,8 @@ int g_CreditsNormal, g_CreditsBonus, g_CreditsPractice, g_CreditsNormalAfterComp
 
 public Plugin myinfo =
 {
-	name = "Zephyrus-Store: ckSurf",
-	author = "Simon, Cruze",
+	name = "Zephyrus-Store:  SurfTimer",
+	author = "Simon, Cruze, Caaine",
 	description = "Give credits on completion.",
 	version = PLUGIN_VERSION,
 	url = "yash1441@yahoo.com"
@@ -51,8 +51,8 @@ public void OnPluginStart()
 	HookConVarChange(g_hCreditsBonusAfterCompletion, OnConVarChanged);
 	HookConVarChange(g_hCreditsPracticeAfterCompletion, OnConVarChanged);
 	
-	AutoExecConfig(true, "zeph_cksurf");
-	LoadTranslations("zeph_cksurf");
+	AutoExecConfig(true, "surftimer_credits");
+	LoadTranslations("surftimer_credits");
 }
 
 public int OnConVarChanged(Handle convar, const char[] oldValue, const char[] newValue)
@@ -107,7 +107,7 @@ public void OnMapStart()
 	}
 }
 
-public Action ckSurf_OnMapFinished(int client, float fRunTime, char sRunTime[54], int rank, int total)
+public Action surftimer_OnMapFinished(int client, float fRunTime, char sRunTime[54], int rank, int total)
 {
 	if(!mapFinished[client])
 	{
@@ -122,7 +122,7 @@ public Action ckSurf_OnMapFinished(int client, float fRunTime, char sRunTime[54]
 	}
 }
 
-public Action ckSurf_OnBonusFinished(int client, float fRunTime, char sRunTime[54], int rank, int total, int bonusid)
+public Action surftimer_OnBonusFinished(int client, float fRunTime, char sRunTime[54], int rank, int total, int bonusid)
 {
 	if(!bonusFinished[client])
 	{
@@ -137,7 +137,7 @@ public Action ckSurf_OnBonusFinished(int client, float fRunTime, char sRunTime[5
 	}
 }
 
-public Action ckSurf_OnPracticeFinished(int client, float fRunTime, char sRunTime[54])
+public Action surftimer_OnPracticeFinished(int client, float fRunTime, char sRunTime[54])
 {
 	if(!practiceFinished[client])
 	{
