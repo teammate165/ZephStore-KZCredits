@@ -1,0 +1,48 @@
+"Phrases"
+{
+	"OnProFinished"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1} You earned {green}{2}{default} credits for completing this map!"
+	}
+	"OnProFinishedAgain"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1} You earned {green}{2}{default} credits for completing this map again!"
+	}
+	"OnBonusFinished"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1} You earned {green}{2}{default} credits for completing this bonus!"
+	}
+	"OnBonusFinishedAgain"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en" 		"{1} You earned {green}{2}{default} credits for completing this bonus again!"
+	}
+	"OnNubFinished"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en" 		"{1} You earned {green}{2}{default} credits for completing this map in TP mode!"
+	}
+	"OnNubFinishedAgain"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en" 		"{1} You earned {green}{2}{default} credits for completing this map in TP mode again!"
+	}
+	"Too Many Pro Runs"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1} You have completed more than {green}{2}{default} {blue}PRO{default} runs on this maps, {red}no{default} credit will be awarded.
+	}
+	"Too Many Nub Runs"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1} You have completed more than {green}{2}{default} {yellow}NUB{default} runs on this maps, {red}no{default} credit will be awarded.
+	}
+	"Too Many Bonus Runs"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1} You have completed this bonus more than {green}{2}{default} times, {red}no{default} credit will be awarded.
+	}
+}
